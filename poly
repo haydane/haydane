@@ -1,0 +1,41 @@
+#include <iostream.h>
+class stu
+{
+	int age;
+	char name[20];
+	char sex;
+	void input()
+	{
+		cout << "name: ";
+		cin.get(name,20);
+		cin.seekg(0);
+		cout << "age: ";
+		cin >> age;
+	}
+	void output()
+	{
+		cout << "name: " << name << endl;
+		cout << "age: " << age << endl;
+	}
+};
+class stu1 : public stu
+{
+	void input()
+	{
+		cout << "sex: ";
+		cin >> sex;
+	}
+	void output()
+	{
+		cout << "sex: " << sex << endl;
+	}
+};
+void main()
+{
+	stu obj1;
+	stu1 obj2;
+	stu *obj;
+	obj=&obj1;
+	obj=&obj2;
+	obj->input();
+}
